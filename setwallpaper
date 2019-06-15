@@ -2,5 +2,6 @@
 # hydrocodone's setwallpaper
 # generates a colorscheme of a random background and sets the wallpaper using feh
 
-wal -i /home/hydrocodone/Images/backgrounds -n
+bgdir=/home/hydrocodone/Images/backgrounds
+wal -i $bgdir -n
 feh --no-fehbg --bg-fill "$(</home/hydrocodone/.cache/wal/wal)"
