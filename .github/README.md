@@ -9,7 +9,9 @@ Remember to run `chmod +x *` in the newly cloned repository, and export your `$P
 export PATH="$PATH:$HOME/.scripts"
 ```
 
-* `compiler` -- compiles source code opened in `vim` based on file extension when executed. 
+* `compiler` -- renders/compiles source code opened in `vim` based on file extension when executed. 
+
+	* currently supports the following file extensions: `.rmd` (R-Markdown), `.tex` (LaTeX), `.md` (Markdown), `.c` (C source code), `.py` (Python source code), `.scm` (Scheme source code).
 
 	* to run, put the following lines in your `.vimrc`, open any compatible source code, and press \<leader\>-C (usually \\-c):
 	```
