@@ -11,7 +11,7 @@ export PATH="$PATH:$HOME/.scripts"
 
 * `compiler` -- compiles source code opened in `vim` based on file extension when executed. 
 
-	* to run, put the following lines in your `.vimrc`, open any compatible source code, and press <leader>-C (usually \\-c):
+	* to run, put the following lines in your `.vimrc`, open any compatible source code, and press \<leader\>-C (usually \\-c):
 	```
 	set shellcmdflag=-ic
 	map <leader>c :!compiler <c-r>%<CR>
