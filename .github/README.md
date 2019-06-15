@@ -26,3 +26,7 @@ export PATH="$PATH:$HOME/.scripts"
 * `lock` -- just a bunch of command flags delimitted by newlines for i3lock-color.
 	
 	* the lockscreen image must be named `i3lockscreen` in your `.scripts` folder.
+
+## license
+
+* all scripts in this repository are licensed under the MIT License as free and open source software. see `LICENSE` for more details.
