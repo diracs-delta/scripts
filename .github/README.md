@@ -1,6 +1,6 @@
 # scripts
 
-Here are all the scripts I use. I store these in a `.scripts` folder in my `$HOME` directory. This list is sure to grow as my `bash` and Python skills grow... hopefully.
+Here are all the scripts I use. I store these in a `.scripts` folder in my `$HOME` directory.
 
 ## documentation
 
@@ -19,7 +19,11 @@ export PATH="$PATH:$HOME/.scripts"
 	map <leader>c :!compiler <c-r>%<CR>
 	```
 
-* `setwallpaper` -- script that sets a colorscheme baesd on a random image in a specified folder using `wal` and then uses `feh` to set the wallpaper.
+* `replace_space` -- replaces all spaces within filenames with underscores in the current directory.
+	
+	* this doesn't work for folders, and is not recursive. i hope to extend this someday into a larger script that can replace filenames with any regex.
+
+* `setwallpaper` -- script that sets a colorscheme based on a random image in a specified folder using `wal` and then uses `feh` to set the wallpaper.
 
 	* set your wallpaper folder accordingly by defining `$bgdir`.
 
