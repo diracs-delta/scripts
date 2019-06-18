@@ -1,0 +1,7 @@
+#!/bin/bash
+# hydrocodone's replace_space
+# short shell script that just replaces all spaces in filenames with underscores
+
+find -name "* *" -type f -print0 | while read -d $'\0' f; \
+	do mv "$f" "${f// /_}"; \
+done
