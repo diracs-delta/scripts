@@ -10,7 +10,7 @@ case "$file" in
 	*\.tex) pdflatex "$file" ;;
 	*\.md) pandoc "$file" -o "$filename".pdf ;;
 	*\.c) cc $file && ./a.out ;;
-	*\.py) python $file ;;
+	*\.py) ./$file ;;
 	*\.scm) mit-scheme < "$file" ;;
 esac
 
