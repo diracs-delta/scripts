@@ -1,0 +1,5 @@
+#!/bin/sh
+# hydrocodone's bbg
+# tiny shell script that runs any command as a background process
+
+/usr/bin/nohup "$@" &> /dev/null &
