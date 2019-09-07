@@ -12,6 +12,7 @@ case "$file" in
 	*\.c) cc $file && ./a.out ;;
 	*\.py) python $file ;;
 	*\.scm) mit-scheme < "$file" ;;
+	*\.r) Rscript $file
 esac
 
 cd "$(pwd)" || exit
