@@ -8,7 +8,7 @@ filename="${file%.*}"
 while true
 do
 	read -s -n 1 key
-	if [$key = ""]; then
+	if [ "$key" == "" ] ; then
 		case "$file" in
 			*\.rmd) echo "require(rmarkdown); render('$file', output_dir='../')" | R --vanilla ;;
 			*\.tex) pdflatex "$file" ;;
