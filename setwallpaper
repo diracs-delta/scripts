@@ -4,4 +4,4 @@
 
 bgdir=/home/hydrocodone/Images/backgrounds
 wal -i $bgdir -n
-feh --no-fehbg --bg-fill "$(</home/hydrocodone/.cache/wal/wal)"
+feh --no-fehbg --bg-fill --geometry +100 "$(</home/hydrocodone/.cache/wal/wal)"

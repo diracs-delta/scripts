@@ -1,0 +1,26 @@
+#!/bin/sh
+# hydrocodone's syu (update script)
+# dependencies: pacman-contrib
+# usage: syu [country]
+# options: country is set to "US" unless otherwise specified.
+#          it is the two letter code defining a country.
+
+# note: add "Include: [MIRROR_DIR]/mirrorlist" above all
+# "Include: /etc/pacman.d/mirrorlist" lines in /etc/pacman.conf
+MIRROR_DIR="$HOME/.config/pacman.d/"
+MIRROR_LIST="$MIRROR_DIR/mirrorlist"
+
+if [ ! -d $MIRROR_DIR ]; then
+	echo "[syu]: $MIRROR_DIR does not exist. Creating..."
+	mkdir -p $MIRROR_DIR
+fi
+
+country="$1"
+if [ "$country" ==  "" ]; then
+	country="US"
+fi
+url="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on"
+
+echo "[syu]: updating $MIRROR_LIST..."
+curl -s $url | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > $MIRROR_LIST
+sudo pacman -Syu
