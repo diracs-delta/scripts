@@ -8,7 +8,7 @@
 # note: add "Include: [MIRROR_DIR]/mirrorlist" above all
 # "Include: /etc/pacman.d/mirrorlist" lines in /etc/pacman.conf
 MIRROR_DIR="$HOME/.config/pacman.d/"
-MIRROR_LIST="$MIRROR_DIR/mirrorlist"
+MIRROR_LIST="$MIRROR_DIR""mirrorlist"
 
 if [ ! -d $MIRROR_DIR ]; then
 	echo "[syu]: $MIRROR_DIR does not exist. Creating..."
