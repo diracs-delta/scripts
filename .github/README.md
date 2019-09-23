@@ -29,9 +29,17 @@ export PATH="$PATH:$HOME/.scripts"
 	map <leader>c :!compiler <c-r>%<CR>
 	```
 
+* `syu` -- my update script. currently, all it does is update a mirror list
+  (default `~/.config/pacman.d/mirrorlist`), and then update arch linux.
+  remember to update `/etc/pacman.d/mirrorlist` to use the mirror list updated
+  by `syu`.
+
+	* wishlist: pull all git repos from remote/origin and update AUR and R
+	  packages too.
+
 * `replace_space` -- replaces all spaces within filenames with underscores in
   the current directory.
-	
+
 	* this doesn't work for folders, and is not recursive. i hope to extend
 	  this someday into a larger script that can replace filenames with any
 	  regex.
@@ -47,7 +55,7 @@ export PATH="$PATH:$HOME/.scripts"
 
 * `lock` -- just a bunch of command flags delimitted by newlines for
   i3lock-color.
-	
+
 	* the lockscreen image must be named `i3lockscreen` in your `.scripts`
 	  folder.
 
