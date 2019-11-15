@@ -44,16 +44,18 @@ export PATH="$PATH:$HOME/.scripts"
 	  this someday into a larger script that can replace filenames with any
 	  regex.
 
-* `setwallpaper` -- script that sets a colorscheme based on a random image in a
-  specified folder using `wal` and then uses `feh` to set the wallpaper.
+* `setwallpaper` -- script that sets a color scheme based on a random image in
+  a specified folder using `wal` and then uses `feh` to set the wallpaper.
 
 	* set your wallpaper folder accordingly by defining `$bgdir`.
 
-* `bbg` -- **b**anish to **b**ack**g**round. uses `nohup` to ignore HUP
-  signals upon exit, and directs all STDERR and STDOUT to `/dev/null`. just
-  run `bbg [command]`.
+* `bbg [COMMAND]` -- **b**anish to **b**ack**g**round. uses `nohup` to ignore HUP
+  signals upon exit, and directs all STDERR and STDOUT to `/dev/null`.
 
-* `lock` -- just a bunch of command flags delimitted by newlines for
+* `termopen [COMMAND]` -- opens the command in the user's preferred terminal
+  specified by the `$TERM` environmental variable.
+
+* `lock` -- just a bunch of command flags delimited by newlines for
   i3lock-color.
 
 	* the lockscreen image must be named `i3lockscreen` in your `.scripts`
