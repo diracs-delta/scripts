@@ -1,5 +1,5 @@
 #!/bin/sh
-# hydrocodone's compiler 
+# hydrocodone's compile
 # shell script that compiles source code opened in vim based on file extension
 
 file=$(readlink -f "$1")
@@ -10,8 +10,9 @@ case "$file" in
 	*\.tex) pdflatex "$file" ;;
 	*\.md) pandoc "$file" -o "$filename".pdf ;;
 	*\.c) cc $file && ./a.out ;;
-	*\.py) $file;;
+	*\.py) python $file ;;
 	*\.scm) mit-scheme < "$file" ;;
+	*\.r) Rscript $file
 esac
 
 cd "$(pwd)" || exit
