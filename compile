@@ -5,20 +5,14 @@
 file=$(readlink -f "$1")
 filename="${file%.*}"
 
-while true
-do
-	read -s -n 1 key
-	if [ "$key" == "" ] ; then
-		case "$file" in
-			*\.rmd) echo "require(rmarkdown); render('$file', output_dir='../')" | R --vanilla ;;
-			*\.tex) pdflatex "$file" ;;
-			*\.md) pandoc "$file" -o "$filename".pdf ;;
-			*\.c) cc $file && ./a.out ;;
-			*\.py) python $file ;;
-			*\.scm) mit-scheme < "$file" ;;
-			*\.r) Rscript $file
-		esac
-	fi
-done
+case "$file" in
+	*\.rmd) echo "require(rmarkdown); render('$file', output_dir='../')" | R --vanilla ;;
+	*\.tex) pdflatex "$file" ;;
+	*\.md) pandoc "$file" -o "$filename".pdf ;;
+	*\.c) cc $file && ./a.out ;;
+	*\.py) python $file ;;
+	*\.scm) mit-scheme < "$file" ;;
+	*\.r) Rscript $file
+esac
 
 cd "$(pwd)" || exit

@@ -1,0 +1,6 @@
+#!/bin/bash
+# hydrocodone's termopen
+# opens a terminal application using $TERM.
+# (allows for custom terminal to be used by xdg-utils)
+
+$TERM -e "$@"
