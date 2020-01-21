@@ -4,15 +4,15 @@
 # Dependency: i3lock-color (AUR)
 
 i3lock \
--i "/home/hydrocodone/.scripts/i3lockscreen" \
 -k \
+--blur=10 \
 --force-clock \
 --indicator \
 --ringcolor=00000000 \
 --ringwrongcolor=e31616ff \
---insidecolor=00000000 \
---insidevercolor=00000000 \
---insidewrongcolor=00000000 \
+--insidecolor=000000ff \
+--insidevercolor=000000ff \
+--insidewrongcolor=000000ff \
 --keyhlcolor=ffffffff \
 --veriftext="" \
 --wrongtext="" \
@@ -22,11 +22,4 @@ i3lock \
 --timecolor=ffffffff \
 --datecolor=ffffffff \
 --datestr="%B %d, %Y" \
---timepos="x+w-100:y+h-40" \
---datepos="x+w-100:y+h-15" \
---timesize=40 \
---datesize=14 \
---indpos="x+w-225:y+h-40" \
---radius=25 \
---ring-width=5 \
 --linecolor=ffffffff
