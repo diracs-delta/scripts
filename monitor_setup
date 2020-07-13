@@ -1,0 +1,2 @@
+#!/bin/bash
+xrandr --output HDMI-0 --rotate left --auto --output DVI-D-0 --rate 144.00 --mode 1920x1080 --right-of HDMI-0
