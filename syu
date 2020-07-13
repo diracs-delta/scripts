@@ -28,5 +28,5 @@ curl -s $url | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > $MI
 sudo pacman -Syu
 
 # update R packages
-
-echo "update.packages(repos = 'https://cloud.r-project.org/')" | sudo -B R --vanilla
+# TODO: make this a command line option since i don't use R anymore
+# echo "update.packages(repos = 'https://cloud.r-project.org/')" | sudo -B R --vanilla
