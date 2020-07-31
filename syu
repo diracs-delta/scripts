@@ -8,8 +8,15 @@
 # note: add "Include: [MIRROR_DIR]/mirrorlist" above all
 # "Include: /etc/pacman.d/mirrorlist" lines in /etc/pacman.conf
 
-# update system packages
-MIRROR_DIR="$HOME/.config/pacman.d/"
+# TODO: make invoked syu skip non-sudo steps
+if [ $EUID != 0 ]; then
+	echo "[syu]: escalating root privileges..."
+	sudo "$0" "$@"
+	exit $?
+fi
+
+USER=$(logname)
+MIRROR_DIR="/home/$USER/.config/pacman.d/"
 MIRROR_LIST="$MIRROR_DIR""mirrorlist"
 
 if [ ! -d $MIRROR_DIR ]; then
@@ -25,7 +32,11 @@ url="https://www.archlinux.org/mirrorlist/?country=${country}&protocol=https&ip_
 
 echo "[syu]: updating $MIRROR_LIST..."
 curl -s $url | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > $MIRROR_LIST
-sudo pacman -Syu
+
+echo "[syu]: installing and updating packages..."
+pacman -Syu
+echo "[syu]: cleaning pacman cache..."
+paccache -r -k 1
 
 # update R packages
 # TODO: make this a command line option since i don't use R anymore
