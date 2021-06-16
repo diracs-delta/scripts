@@ -8,18 +8,18 @@ i3lock \
 --blur=10 \
 --force-clock \
 --indicator \
---ringcolor=00000000 \
---ringwrongcolor=e31616ff \
---insidecolor=000000ff \
---insidevercolor=000000ff \
---insidewrongcolor=000000ff \
---keyhlcolor=ffffffff \
---veriftext="" \
---wrongtext="" \
---noinputtext="" \
---locktext="" \
---lockfailedtext="" \
---timecolor=ffffffff \
---datecolor=ffffffff \
---datestr="%B %d, %Y" \
---linecolor=ffffffff
+--ring-color=00000000 \
+--ringwrong-color=e31616ff \
+--inside-color=000000ff \
+--insidever-color=000000ff \
+--insidewrong-color=000000ff \
+--keyhl-color=ffffffff \
+--verif-text="" \
+--wrong-text="" \
+--noinput-text="" \
+--lock-text="" \
+--lockfailed-text="" \
+--time-color=ffffffff \
+--date-color=ffffffff \
+--date-str="%B %d, %Y" \
+--line-color=ffffffff
